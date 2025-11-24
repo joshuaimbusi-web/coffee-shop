@@ -1,23 +1,13 @@
-"""
-Interactive debug script for the coffee shop models.
-
-Run with:
-    python debug.py
-or use it as a starting point for interactive experiments.
-"""
-
 from customer import Customer
 from coffee import Coffee
 from order import Order
 
 def reset_state():
-    """Clear in-memory registries for a clean debug run."""
     Customer._all = []
     Coffee._all = []
     Order._all = []
 
 def demo():
-    """Small demo illustrating features and validations."""
     reset_state()
 
     print("Creating customers and coffees...")
@@ -45,7 +35,6 @@ def demo():
     print("Most aficionado for Latte:", Customer.most_aficionado(latte))
 
 def check_invalid_inputs():
-    """Show how exceptions are raised for invalid inputs."""
     reset_state()
     try:
         print("Attempt invalid customer name (too long)...")

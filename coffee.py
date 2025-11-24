@@ -1,10 +1,4 @@
-"""
-Coffee model for the coffee shop domain.
-"""
-
 from utils import validate_string
-
-
 class Coffee:
     _all = []
 
@@ -28,12 +22,10 @@ class Coffee:
         return cls._all
 
     def orders(self):
-        """Return all Order instances for this coffee."""
         from order import Order
         return [o for o in Order.all() if o.coffee is self]
 
     def customers(self):
-        """Return unique Customer instances who have ordered this coffee."""
         seen = []
         for o in self.orders():
             if o.customer not in seen:
@@ -41,11 +33,9 @@ class Coffee:
         return seen
 
     def num_orders(self):
-        """Return total number of orders of this coffee."""
         return len(self.orders())
 
     def average_price(self):
-        """Return average price for this coffee (0.0 if no orders)."""
         ords = self.orders()
         if not ords:
             return 0.0
