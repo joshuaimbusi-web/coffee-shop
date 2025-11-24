@@ -1,4 +1,4 @@
-📌 Coffee Shop Domain Modeling
+Coffee Shop Domain Modeling
 
 This project models a Coffee Shop domain using Object-Oriented Programming principles in Python.
 It includes three main classes — Customer, Coffee, and Order — implementing a many-to-many relationship through domain modeling, validations, aggregation methods, and test coverage using pytest.
